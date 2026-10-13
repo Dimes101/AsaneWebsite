@@ -6,6 +6,7 @@ Marketing and portfolio site for **Asane Solutions LLC** (engineering × cyberse
 
 ```
 index.html            All page content and markup
+glps.html             Case file: the GLPS dispatch system (T-01)
 css/styles.css        All styles (design tokens at the top)
 js/main.js            Mobile menu, active-section highlight, scroll reveal
 js/contact-form.js    Form validation + delivery (config at the top)
