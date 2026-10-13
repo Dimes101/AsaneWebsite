@@ -79,7 +79,6 @@ var CONTACT_CONFIG = {
 
   function collect() {
     return {
-      type: form.querySelector('input[name="type"]:checked').value,
       name: value("name"),
       email: value("email"),
       organization: value("organization"),
@@ -89,9 +88,8 @@ var CONTACT_CONFIG = {
   }
 
   function sendViaEmailApp(data) {
-    var subject = "[Asane] " + data.type + " — " + data.name;
+    var subject = "[Asane] Project inquiry — " + data.name;
     var body = [
-      "Inquiry type: " + data.type,
       "Name: " + data.name,
       "Email: " + data.email,
       "Company: " + (data.organization || "—"),

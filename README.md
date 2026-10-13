@@ -40,29 +40,20 @@ Other static hosts work too. Upload the folder as-is:
 - **Netlify / Cloudflare Pages / Vercel:** connect the repo. Leave the build command empty and set the publish directory to `/`.
 - **Any web server:** copy the files into the web root.
 
-## Before going live: replace the placeholders
+## Content
 
-Every placeholder has a visible **PLACEHOLDER** tag and an `<!-- PLACEHOLDER -->` comment. To find them all:
+**Team (§03):** profiles for Ahmed Hanif (founder, Engineering track) and Hasham Rizvi (Cybersecurity track lead). Each profile is drawn from that person's résumé. The résumés are served from `assets/resumes/`. To update one, replace the PDF and keep the same file name.
 
-```sh
-grep -n "PLACEHOLDER" index.html js/*.js
-```
+**Case studies:** every case study comes from one of the two résumés and is labeled with its type (client work, contract work, work experience, project, or lab) and who did it. To add one, copy a `<details class="case">` block into the right capability. Fill in its rows (Role, Work, Result, and Repo if there's a link), and only use numbers you can back up. A capability can hold any number of cases.
 
-| What | Where |
-|---|---|
-| 9 case studies (one per capability) | `index.html`, `<details class="case is-placeholder">` blocks |
-| Founder name, bio, "open to" line | `index.html`, §03 Profile |
-| Résumé / LinkedIn / GitHub links | `index.html`, §03 Profile. Set the `href`, then remove `is-disabled`, `aria-disabled`, and the tag |
-| Toolbox list | `index.html`, §03 Profile. List only tools you've actually used |
-| Contact email and location | `index.html`, §05 Contact, **and** `CONTACT_CONFIG.email` in `js/contact-form.js` |
+**Still a placeholder:** the contact email. It has a visible PLACEHOLDER tag. Set it in both places:
 
-**Adding a real case study:** copy a `<details class="case">` block into the right capability. Remove the `is-placeholder` class and the `<span class="tag-placeholder">`, then fill in Problem / Approach / Outcome / Stack. Only use numbers you can back up. A capability can hold any number of cases.
-
-**Résumé PDF:** put it at `assets/resume.pdf` and point the button at it.
+- `index.html`, §05 Contact
+- `CONTACT_CONFIG.email` in `js/contact-form.js`
 
 ## Contact form
 
-The form validates in the browser: name, a properly formed email, and a message of at least 20 characters. A hidden honeypot field drops most bots. Delivery is set in `js/contact-form.js`:
+The form is for client project inquiries; recruiters are pointed to the team profiles. It validates in the browser: name, a properly formed email, and a message of at least 20 characters. A hidden honeypot field drops most bots. Delivery is set in `js/contact-form.js`:
 
 - **Default (`endpoint: ""`):** opens the visitor's email app with the message already filled in. No setup needed, but it relies on the visitor having a mail app.
 - **Recommended for production:** create a free form at a service like Formspree, Basin, or Getform and paste its URL into `endpoint`. The form then POSTs JSON to that URL and shows success or error messages on the page. No server needed.
@@ -73,10 +64,10 @@ The site is laid out like a set of engineering drawings. That fits a firm whose 
 
 - **Sheet-index navigation.** On desktop the menu is a fixed left rail, numbered `00–05` like a drawing index, with a marker on the current section. Under 1080px it becomes a top bar with a full-screen menu. Each section has a matching `§0X` label, plus corner crop marks.
 - **Two tracks, one system.** The only bright colors on the site mark the two tracks: **amber = Track A, Engineering** and **cyan = Track B, Security**. Each track also has its own background texture (a square drafting grid vs. a dot matrix) and a large outlined track letter. Everything else is black and space grey (`#0b0b0c` → `#8a8d94`).
-- **Both audiences in the first screen.** The hero states the value in one sentence, then offers two routes: *Hiring?* goes to the Profile, *Need a project done?* goes to the services. Just below, the capability ledger lists all nine services as jump links with codes (T-01…S-06). The same codes appear in the skills matrix, so each skill links straight to the case study that backs it up.
+- **Both audiences in the first screen.** The hero states the value in one sentence, then offers two routes: *Recruiting?* goes to the Team section, *Need a project done?* goes to the services. Just below, the capability ledger lists all nine services as jump links with codes (T-01…S-06). The same codes appear in the skills matrix, so each skill links straight to the case study that backs it up.
 - **Fig. 1 diagram.** An inline SVG shows how the services fit together: main system ⇄ VPS tunnel ⇄ database, inside a cloud/IAM boundary, feeding a SIEM, governed by CIS/NIST. It loads instantly because it's code, not an image.
 - **Typography.** Archivo condensed, uppercase, for headlines (engineered and dense). Archivo at normal width for reading. IBM Plex Mono for labels, codes, and data, the "annotation" layer.
-- **Case studies as case files.** Each is a native `<details>` element with Problem / Approach / Outcome / Stack, collapsed by default so each service stays scannable. It needs no JavaScript and works with keyboards and screen readers.
+- **Case studies as case files.** Each is a native `<details>` element labeled with its type and owner, collapsed by default so each service stays scannable. It needs no JavaScript and works with keyboards and screen readers.
 - **Footer as a title block.** Firm, disciplines, doc/rev, date. A left-aligned grid instead of a centered sign-off.
 - **Motion is minimal.** The diagram draws in once, then a packet moves across the tunnel. Sections fade up as you scroll. All of it turns off when the visitor's system asks for reduced motion.
 

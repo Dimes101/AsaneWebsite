@@ -63,7 +63,7 @@
 
   /* ---- Scroll reveal ---------------------------------------------------- */
   var revealTargets = document.querySelectorAll(
-    ".track__head, .cap, .profile__card, .profile__matrix, .section-head, .flow__step, .terms, .contact__info, .form"
+    ".track__head, .cap, .person, .team__matrix, .section-head, .flow__step, .terms, .contact__info, .form"
   );
 
   if (!reduceMotion && "IntersectionObserver" in window) {
