@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asane Solutions — Engineering &amp; Cybersecurity</title>
+  <meta name="description" content="Asane Solutions LLC builds dispatch systems, databases, and secure connectivity for small companies, then monitors, hardens, and governs them against CIS Benchmarks and NIST.">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta property="og:title" content="Asane Solutions — Engineering &amp; Cybersecurity">
+  <meta property="og:description" content="We build the systems your company runs on, then we secure them.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts: Archivo (variable width, used condensed for display) + IBM Plex Mono (labels, data). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/contact-form.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       NAVIGATION — a "sheet index" rail on desktop, top bar on mobile.
+       Section numbers (00–05) match the § labels on each section.
+       ============================================================ -->
+  <header class="rail" data-rail>
+    <a class="rail__brand" href="#top" aria-label="Asane Solutions, back to top">
+      <svg class="rail__mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M4 28 L16 4 L28 28" fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M9 19 H23" fill="none" stroke="var(--sec)" stroke-width="2.5"/>
+      </svg>
+      <span class="rail__name">Asane <br>Solutions</span>
+    </a>
+
+    <button class="rail__toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+      <span class="rail__toggle-label">Menu</span>
+      <span class="rail__toggle-icon" aria-hidden="true"></span>
+    </button>
+
+    <nav class="rail__nav" id="site-nav" aria-label="Primary">
+      <p class="rail__caption" aria-hidden="true">Sheet index</p>
+      <ol class="rail__list">
+        <li><a href="#top" data-nav-link><span class="rail__num">00</span>Overview</a></li>
+        <li><a href="#engineering" data-nav-link><span class="rail__num">01</span>Engineering</a></li>
+        <li><a href="#security" data-nav-link><span class="rail__num">02</span>Security</a></li>
+        <li><a href="#profile" data-nav-link><span class="rail__num">03</span>Profile</a></li>
+        <li><a href="#engagement" data-nav-link><span class="rail__num">04</span>Engagement</a></li>
+        <li><a href="#contact" data-nav-link><span class="rail__num">05</span>Contact</a></li>
+      </ol>
+      <a class="btn btn--solid rail__cta" href="#contact">Start an inquiry</a>
+      <p class="rail__meta" aria-hidden="true">DOC ASN-WEB · REV A</p>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         §00 OVERVIEW — value statement, audience routes, capability ledger.
+         ============================================================ -->
+    <section class="hero sheet" id="top" aria-labelledby="hero-title">
+      <div class="sheet__label" aria-hidden="true">§00 — Overview</div>
+
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">Asane Solutions LLC · Engineering <span class="x">×</span> Cybersecurity</p>
+          <h1 class="hero__title" id="hero-title">
+            We build the systems your company runs&nbsp;on <span class="hero__then">Then we secure them.</span>
+          </h1>
+          <p class="hero__lede">
+            A small engineering and cybersecurity firm. We design dispatch systems, databases, and the
+            private links between them, then monitor, harden, and govern them against
+            CIS&nbsp;Benchmarks and NIST.
+          </p>
+
+          <div class="routes" role="group" aria-label="Choose your route">
+            <a class="route" href="#profile">
+              <span class="route__num">Route 01</span>
+              <span class="route__who">Hiring?</span>
+              <span class="route__what">Skills matrix, project evidence, résumé</span>
+              <span class="route__arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="route route--client" href="#engineering">
+              <span class="route__num">Route 02</span>
+              <span class="route__who">Need a project done?</span>
+              <span class="route__what">Services, case studies, inquiry form</span>
+              <span class="route__arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Architecture diagram: amber = engineering track, cyan = security track. -->
+        <figure class="hero__figure">
+          <svg class="diagram" viewBox="0 0 480 400" role="img" aria-labelledby="dg-title dg-desc">
+            <title id="dg-title">How the two tracks fit together</title>
+            <desc id="dg-desc">A main system connects to a database through a private VPS tunnel. Both sit inside a cloud boundary governed by identity and role-based access, report logs to a SIEM, and are measured against CIS and NIST controls.</desc>
+
+            <!-- Security envelope -->
+            <rect class="dg-sec dg-draw" x="12" y="104" width="456" height="168" rx="4" stroke-dasharray="6 6"/>
+            <text class="dg-label dg-label--sec" x="24" y="124">CLOUD BOUNDARY · IAM · RBAC</text>
+
+            <!-- GRC -->
+            <rect class="dg-sec dg-draw" x="170" y="18" width="140" height="50" rx="2"/>
+            <text class="dg-label dg-label--sec" x="240" y="40" text-anchor="middle">GRC</text>
+            <text class="dg-sub" x="240" y="56" text-anchor="middle">CIS · NIST</text>
+            <line class="dg-sec dg-draw" x1="240" y1="68" x2="240" y2="104" stroke-dasharray="3 4"/>
+
+            <!-- Engineering nodes -->
+            <rect class="dg-tech dg-draw" x="36" y="160" width="128" height="72" rx="2"/>
+            <text class="dg-label dg-label--tech" x="100" y="190" text-anchor="middle">MAIN SYSTEM</text>
+            <text class="dg-sub" x="100" y="208" text-anchor="middle">CAD / DISPATCH</text>
+
+            <rect class="dg-tech dg-draw" x="316" y="160" width="128" height="72" rx="2"/>
+            <text class="dg-label dg-label--tech" x="380" y="190" text-anchor="middle">DATABASE</text>
+            <text class="dg-sub" x="380" y="208" text-anchor="middle">SCHEMA · BACKUPS</text>
+
+            <!-- VPS tunnel -->
+            <line class="dg-tech dg-draw" x1="164" y1="196" x2="316" y2="196"/>
+            <text class="dg-sub" x="240" y="186" text-anchor="middle">VPS TUNNEL</text>
+            <circle class="dg-packet" cx="172" cy="196" r="4"/>
+
+            <!-- Log feeds to SIEM -->
+            <path class="dg-sec dg-draw" d="M100 232 V300 H170" stroke-dasharray="3 4"/>
+            <path class="dg-sec dg-draw" d="M380 232 V300 H310" stroke-dasharray="3 4"/>
+            <rect class="dg-sec dg-draw" x="170" y="276" width="140" height="50" rx="2"/>
+            <text class="dg-label dg-label--sec" x="240" y="298" text-anchor="middle">SIEM</text>
+            <text class="dg-sub" x="240" y="314" text-anchor="middle">LOGS · ALERTS</text>
+
+            <!-- Drawing furniture -->
+            <text class="dg-sub" x="12" y="388">FIG. 1 — REFERENCE ARCHITECTURE</text>
+            <text class="dg-sub" x="468" y="388" text-anchor="end">NTS</text>
+          </svg>
+        </figure>
+      </div>
+
+      <!-- Capability ledger: every service on one screen, each a jump link. -->
+      <div class="ledger" aria-label="Capability index">
+        <div class="ledger__col ledger__col--tech">
+          <h2 class="ledger__head"><span class="track-letter" aria-hidden="true">A</span> Engineering track</h2>
+          <ol class="ledger__list">
+            <li><a href="#t-01"><span class="code">T-01</span>Computer-aided dispatch (CAD) systems</a></li>
+            <li><a href="#t-02"><span class="code">T-02</span>Database design &amp; build</a></li>
+            <li><a href="#t-03"><span class="code">T-03</span>VPS links between systems &amp; databases</a></li>
+          </ol>
+        </div>
+        <div class="ledger__col ledger__col--sec">
+          <h2 class="ledger__head"><span class="track-letter" aria-hidden="true">B</span> Security track</h2>
+          <ol class="ledger__list">
+            <li><a href="#s-01"><span class="code">S-01</span>SIEM</a></li>
+            <li><a href="#s-02"><span class="code">S-02</span>Cloud infrastructure</a></li>
+            <li><a href="#s-03"><span class="code">S-03</span>Cloud security</a></li>
+            <li><a href="#s-04"><span class="code">S-04</span>Identity &amp; access management</a></li>
+            <li><a href="#s-05"><span class="code">S-05</span>Role-based access control</a></li>
+            <li><a href="#s-06"><span class="code">S-06</span>Governance, risk &amp; compliance</a></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         §01 ENGINEERING TRACK
+         Each capability = <article class="cap"> with a description, scope list,
+         and a case-study slot. To add a real project, copy a <details class="case">
+         block, remove the "is-placeholder" class and the placeholder tag.
+         ============================================================ -->
+    <section class="track track--tech sheet" id="engineering" aria-labelledby="eng-title">
+      <div class="sheet__label" aria-hidden="true">§01 — Track A</div>
+      <header class="track__head">
+        <span class="track__letter" aria-hidden="true">A</span>
+        <div>
+          <p class="eyebrow">Track A · Engineering</p>
+          <h2 class="track__title" id="eng-title">Systems that do the work</h2>
+          <p class="track__intro">
+            Small companies run on a handful of critical systems. We build them to be understood,
+            maintained, and handed over — not just shipped.
+          </p>
+        </div>
+      </header>
+
+      <!-- T-01 -->
+      <article class="cap" id="t-01" aria-labelledby="t-01-title">
+        <div class="cap__id">
+          <span class="code">T-01</span>
+          <h3 class="cap__title" id="t-01-title">Computer-aided dispatch (CAD) systems</h3>
+        </div>
+        <div class="cap__body">
+          <p>Dispatch software sized for small operators — patient transfer services, couriers, field crews. Take a request, assign it, track it to done, and keep a record of every step.</p>
+          <ul class="scope">
+            <li>Request intake, assignment, and live status board</li>
+            <li>Separate views for dispatchers, crews, and supervisors</li>
+            <li>Time-stamped history for every job</li>
+          </ul>
+        </div>
+        <div class="cap__cases">
+          <h4 class="cases__title">Case studies</h4>
+          <!-- PLACEHOLDER: illustrative entry only. Replace with a real project or delete. -->
+          <details class="case is-placeholder">
+            <summary>
+              <span class="tag-placeholder">Placeholder</span>
+              <span class="case__title">Dispatch board for a non-emergency patient transfer service</span>
+              <span class="case__tags">CAD · Web app · Audit trail</span>
+            </summary>
+            <dl class="case__body">
+              <dt>Problem</dt><dd>Transfer requests came in by phone and lived in a shared spreadsheet. Nobody had one view of which crew was where.</dd>
+              <dt>Approach</dt><dd>A web dispatch board with request intake, crew status, drag-to-assign, and role-based views for dispatch and supervisors.</dd>
+              <dt>Outcome</dt><dd>One live board replaced the spreadsheet, and every transfer carries a time-stamped history.</dd>
+              <dt>Stack</dt><dd>Python, PostgreSQL, server-rendered UI</dd>
+            </dl>
+          </details>
+        </div>
+      </article>
+
+      <!-- T-02 -->
+      <article class="cap" id="t-02" aria-labelledby="t-02-title">
+        <div class="cap__id">
+          <span class="code">T-02</span>
+          <h3 class="cap__title" id="t-02-title">Database design &amp; build</h3>
+        </div>
+        <div class="cap__body">
+          <p>Schemas that match how your business actually works. We move your data out of spreadsheets and inboxes into a database you can query, back up, and trust.</p>
+          <ul class="scope">
+            <li>Data modeling, schema design, and migration</li>
+            <li>Backups with a tested restore procedure</li>
+            <li>Plain-language documentation of every table</li>
+          </ul>
+        </div>
+        <div class="cap__cases">
+          <h4 class="cases__title">Case studies</h4>
+          <!-- PLACEHOLDER: illustrative entry only. Replace with a real project or delete. -->
+          <details class="case is-placeholder">
+            <summary>
+              <span class="tag-placeholder">Placeholder</span>
+              <span class="case__title">Consolidating customer and job records for a field-service company</span>
+              <span class="case__tags">Schema design · Migration · Backups</span>
+            </summary>
+            <dl class="case__body">
+              <dt>Problem</dt><dd>Customer details, quotes, and job history were split across several spreadsheets with no shared IDs.</dd>
+              <dt>Approach</dt><dd>Modeled the business entities, cleaned and de-duplicated the source data, and migrated it into a relational schema with constraints.</dd>
+              <dt>Outcome</dt><dd>One source of truth for customers and jobs, with nightly backups and a documented restore.</dd>
+              <dt>Stack</dt><dd>PostgreSQL, Python migration scripts</dd>
+            </dl>
+          </details>
+        </div>
+      </article>
+
+      <!-- T-03 -->
+      <article class="cap" id="t-03" aria-labelledby="t-03-title">
+        <div class="cap__id">
+          <span class="code">T-03</span>
+          <h3 class="cap__title" id="t-03-title">VPS links between systems &amp; databases</h3>
+        </div>
+        <div class="cap__body">
+          <p>Your main system needs to reach its database without exposing it to the internet. We set up a hardened VPS and an encrypted private link between them.</p>
+          <ul class="scope">
+            <li>Hardened VPS build with firewall allow-lists</li>
+            <li>Encrypted tunnel — no public database port</li>
+            <li>Monitoring and a written runbook for the link</li>
+          </ul>
+        </div>
+        <div class="cap__cases">
+          <h4 class="cases__title">Case studies</h4>
+          <!-- PLACEHOLDER: illustrative entry only. Replace with a real project or delete. -->
+          <details class="case is-placeholder">
+            <summary>
+              <span class="tag-placeholder">Placeholder</span>
+              <span class="case__title">Private link between an office application and a hosted database</span>
+              <span class="case__tags">VPS · WireGuard · Firewall</span>
+            </summary>
+            <dl class="case__body">
+              <dt>Problem</dt><dd>The database accepted connections from the public internet so the office application could reach it.</dd>
+              <dt>Approach</dt><dd>Built a hardened VPS, connected the office system over an encrypted tunnel, and closed the database to everything but the tunnel.</dd>
+              <dt>Outcome</dt><dd>The database is no longer publicly reachable, and the team has a runbook for the link.</dd>
+              <dt>Stack</dt><dd>Linux VPS, WireGuard, host firewall</dd>
+            </dl>
+          </details>
+        </div>
+      </article>
+    </section>
+
+
+    <!-- ============================================================
+         §02 SECURITY TRACK
+         ============================================================ -->
+    <section class="track track--sec sheet" id="security" aria-labelledby="sec-title">
+      <div class="sheet__label" aria-hidden="true">§02 — Track B</div>
+      <header class="track__head">
+        <span class="track__letter" aria-hidden="true">B</span>
+        <div>
+          <p class="eyebrow">Track B · Cybersecurity</p>
+          <h2 class="track__title" id="sec-title">Defenses you can show an auditor</h2>
+          <p class="track__intro">
+            Visibility, least privilege, and controls mapped to recognized standards. Every
+            engagement ends with evidence you can hand to a customer, insurer, or auditor.
+          </p>
+        </div>
+      </header>
+
+      <!-- S-01 -->
+      <article class="cap" id="s-01" aria-labelledby="s-01-title">
+        <div class="cap__id">
+          <span class="code">S-01</span>
+          <h3 class="cap__title" id="s-01-title">SIEM</h3>
+        </div>
+        <div class="cap__body">
+          <p>Security information and event management. We pull logs from the systems that matter into one place and tune alerts so the ones that fire are worth reading.</p>
+          <ul class="scope">
+            <li>Log source onboarding and normalization</li>
+            <li>Detection rules tuned to your environment</li>
+            <li>Alert routing and a triage playbook</li>
+          </ul>
+        </div>
+        <div class="cap__cases">
+          <h4 class="cases__title">Case studies</h4>
+          <!-- PLACEHOLDER: illustrative entry only. Replace with a real project or delete. -->
+          <details class="case is-placeholder">
+            <summary>
+              <span class="tag-placeholder">Placeholder</span>
+              <span class="case__title">Centralized logging and alerting for a multi-site office</span>
+              <span class="case__tags">SIEM · Detection · Playbooks</span>
+            </summary>
+            <dl class="case__body">
+              <dt>Problem</dt><dd>Logs stayed on each server and firewall. Nobody would have noticed a failed-login spike until something broke.</dd>
+              <dt>Approach</dt><dd>Deployed an open-source SIEM, onboarded servers, firewalls, and identity logs, and wrote rules for the events the team cared about.</dd>
+              <dt>Outcome</dt><dd>One console for security events, with alerts routed to the right person and a playbook for each.</dd>
+              <dt>Stack</dt><dd>Wazuh, syslog, Windows event forwarding</dd>
+            </dl>
+          </details>
+        </div>
+      </article>
+
+      <!-- S-02 -->
+      <article class="cap" id="s-02" aria-labelledby="s-02-title">
+        <div class="cap__id">
+          <span class="code">S-02</span>
+          <h3 class="cap__title" id="s-02-title">Cloud infrastructure</h3>
+        </div>
+        <div class="cap__body">
+          <p>Cloud environments built as code, so they can be reviewed, rebuilt, and audited. No mystery resources, no hand-clicked production.</p>
+          <ul class="scope">
+            <li>Infrastructure-as-code for networks, compute, and storage</li>
+            <li>Separate environments for testing and production</li>
+            <li>Tagging and cost visibility from day one</li>
+          </ul>
+        </div>
+        <div class="cap__cases">
+          <h4 class="cases__title">Case studies</h4>
+          <!-- PLACEHOLDER: illustrative entry only. Replace with a real project or delete. -->
+          <details class="case is-placeholder">
+            <summary>
+              <span class="tag-placeholder">Placeholder</span>
+              <span class="case__title">Rebuilding a hand-configured cloud account as code</span>
+              <span class="case__tags">Terraform · Networking · Environments</span>
+            </summary>
+            <dl class="case__body">
+              <dt>Problem</dt><dd>Production had been built by hand over several years. Nobody could say what every resource was for.</dd>
+              <dt>Approach</dt><dd>Inventoried the account, rewrote it as Terraform modules, and split staging from production.</dd>
+              <dt>Outcome</dt><dd>Every change goes through code review, and the environment can be rebuilt from the repository.</dd>
+              <dt>Stack</dt><dd>Terraform, AWS VPC, EC2, S3</dd>
+            </dl>
+          </details>
+        </div>
+      </article>
+
+      <!-- S-03 -->
+      <article class="cap" id="s-03" aria-labelledby="s-03-title">
+        <div class="cap__id">
+          <span class="code">S-03</span>
+          <h3 class="cap__title" id="s-03-title">Cloud security</h3>
+        </div>
+        <div class="cap__body">
+          <p>Find the misconfigurations before someone else does — public storage, open ports, over-broad keys, missing logs — and fix them in priority order.</p>
+          <ul class="scope">
+            <li>Configuration review against cloud security baselines</li>
+            <li>Prioritized findings with clear fixes</li>
+            <li>Audit logging and guardrails to prevent repeats</li>
+          </ul>
+        </div>
+        <div class="cap__cases">
+          <h4 class="cases__title">Case studies</h4>
+          <!-- PLACEHOLDER: illustrative entry only. Replace with a real project or delete. -->
+          <details class="case is-placeholder">
+            <summary>
+              <span class="tag-placeholder">Placeholder</span>
+              <span class="case__title">Security posture review and remediation for a small SaaS team</span>
+              <span class="case__tags">Posture review · Remediation · Guardrails</span>
+            </summary>
+            <dl class="case__body">
+              <dt>Problem</dt><dd>The team had grown fast and wasn't sure what was exposed in their cloud account.</dd>
+              <dt>Approach</dt><dd>Ran a configuration review, ranked findings by real-world risk, fixed the critical ones together, and added guardrails.</dd>
+              <dt>Outcome</dt><dd>Public exposure closed, audit logging turned on account-wide, and a short list of remaining work with owners.</dd>
+              <dt>Stack</dt><dd>AWS Config, CloudTrail, IAM Access Analyzer</dd>
+            </dl>
+          </details>
+        </div>
+      </article>
+
+      <!-- S-04 -->
+      <article class="cap" id="s-04" aria-labelledby="s-04-title">
+        <div class="cap__id">
+          <span class="code">S-04</span>
+          <h3 class="cap__title" id="s-04-title">Identity &amp; access management (IAM)</h3>
+        </div>
+        <div class="cap__body">
+          <p>Most breaches start with an account. We make sure every person has one identity, strong authentication, and access that ends the day they leave.</p>
+          <ul class="scope">
+            <li>Single sign-on and enforced multi-factor authentication</li>
+            <li>Joiner, mover, and leaver procedures</li>
+            <li>Removal of shared and orphaned accounts</li>
+          </ul>
+        </div>
+        <div class="cap__cases">
+          <h4 class="cases__title">Case studies</h4>
+          <!-- PLACEHOLDER: illustrative entry only. Replace with a real project or delete. -->
+          <details class="case is-placeholder">
+            <summary>
+              <span class="tag-placeholder">Placeholder</span>
+              <span class="case__title">Identity cleanup and single sign-on rollout</span>
+              <span class="case__tags">SSO · MFA · Offboarding</span>
+            </summary>
+            <dl class="case__body">
+              <dt>Problem</dt><dd>Staff had separate passwords for every app, several shared logins, and former employees still had access.</dd>
+              <dt>Approach</dt><dd>Moved apps behind single sign-on, enforced MFA, retired shared accounts, and wrote an offboarding checklist.</dd>
+              <dt>Outcome</dt><dd>One identity per person, and access removal handled in one place.</dd>
+              <dt>Stack</dt><dd>Microsoft Entra ID, SAML/OIDC</dd>
+            </dl>
+          </details>
+        </div>
+      </article>
+
+      <!-- S-05 -->
+      <article class="cap" id="s-05" aria-labelledby="s-05-title">
+        <div class="cap__id">
+          <span class="code">S-05</span>
+          <h3 class="cap__title" id="s-05-title">Role-based access control (RBAC)</h3>
+        </div>
+        <div class="cap__body">
+          <p>Access based on job function, not on who asked last. We design roles, map them to permissions, and set up reviews so access doesn't drift.</p>
+          <ul class="scope">
+            <li>Role model mapped to real job functions</li>
+            <li>Least-privilege permission matrix</li>
+            <li>Recurring access reviews with sign-off</li>
+          </ul>
+        </div>
+        <div class="cap__cases">
+          <h4 class="cases__title">Case studies</h4>
+          <!-- PLACEHOLDER: illustrative entry only. Replace with a real project or delete. -->
+          <details class="case is-placeholder">
+            <summary>
+              <span class="tag-placeholder">Placeholder</span>
+              <span class="case__title">Role model for an internal records application</span>
+              <span class="case__tags">RBAC · Least privilege · Access review</span>
+            </summary>
+            <dl class="case__body">
+              <dt>Problem</dt><dd>Everyone in the application was effectively an administrator.</dd>
+              <dt>Approach</dt><dd>Interviewed each team, defined roles from what they actually needed, built a permission matrix, and migrated users onto it.</dd>
+              <dt>Outcome</dt><dd>Administrative access limited to the people who need it, with a scheduled access review.</dd>
+              <dt>Stack</dt><dd>Application-level RBAC, PostgreSQL row-level security</dd>
+            </dl>
+          </details>
+        </div>
+      </article>
+
+      <!-- S-06 -->
+      <article class="cap" id="s-06" aria-labelledby="s-06-title">
+        <div class="cap__id">
+          <span class="code">S-06</span>
+          <h3 class="cap__title" id="s-06-title">Governance, risk &amp; compliance (GRC)</h3>
+        </div>
+        <div class="cap__body">
+          <p>Security you can prove. We measure systems against <strong>CIS Benchmarks</strong>, map controls to the <strong>NIST Cybersecurity Framework</strong> and <strong>NIST SP&nbsp;800-53</strong>, and turn the gaps into a plan you can act on.</p>
+          <ul class="scope">
+            <li>CIS Benchmark hardening and configuration scans</li>
+            <li>NIST gap assessment and risk register</li>
+            <li>Policies written for how your company really operates</li>
+          </ul>
+        </div>
+        <div class="cap__cases">
+          <h4 class="cases__title">Case studies</h4>
+          <!-- PLACEHOLDER: illustrative entry only. Replace with a real project or delete. -->
+          <details class="case is-placeholder">
+            <summary>
+              <span class="tag-placeholder">Placeholder</span>
+              <span class="case__title">CIS baseline and NIST CSF gap assessment</span>
+              <span class="case__tags">CIS Benchmarks · NIST CSF · Risk register</span>
+            </summary>
+            <dl class="case__body">
+              <dt>Problem</dt><dd>A customer questionnaire asked how the company aligned with NIST, and there was no good answer.</dd>
+              <dt>Approach</dt><dd>Scanned servers and workstations against CIS Benchmarks, mapped existing controls to NIST CSF functions, and logged the gaps as risks.</dd>
+              <dt>Outcome</dt><dd>A prioritized remediation roadmap and a written answer the company could stand behind.</dd>
+              <dt>Stack</dt><dd>CIS-CAT, NIST CSF 2.0, risk register</dd>
+            </dl>
+          </details>
+        </div>
+      </article>
+    </section>
+
+
+    <!-- ============================================================
+         §03 PROFILE — for recruiters and hiring managers.
+         Everything about the founder is PLACEHOLDER until edited.
+         ============================================================ -->
+    <section class="profile sheet" id="profile" aria-labelledby="profile-title">
+      <div class="sheet__label" aria-hidden="true">§03 — Profile</div>
+
+      <div class="profile__grid">
+        <div class="profile__card">
+          <p class="eyebrow">For hiring teams</p>
+          <h2 class="profile__title" id="profile-title">
+            <!-- PLACEHOLDER: replace with the founder's name. -->
+            <span class="is-placeholder-text">[Founder Name]</span>
+          </h2>
+          <p class="profile__role">Founder &amp; Principal Engineer, Asane Solutions LLC</p>
+
+          <!-- PLACEHOLDER: replace this bio with your own. Do not list certifications you don't hold. -->
+          <div class="placeholder-block">
+            <span class="tag-placeholder">Placeholder</span>
+            <p>I build operational systems and secure them — from the database schema to the access policy. I started Asane Solutions to give small companies the same engineering discipline and security controls that larger ones take for granted.</p>
+          </div>
+
+          <!-- PLACEHOLDER: point these at your real résumé and profiles, then remove aria-disabled. -->
+          <ul class="profile__links">
+            <li><a class="btn btn--solid is-disabled" href="#" aria-disabled="true">Résumé (PDF) <span class="tag-placeholder">Placeholder</span></a></li>
+            <li><a class="btn is-disabled" href="#" aria-disabled="true">LinkedIn <span class="tag-placeholder">Placeholder</span></a></li>
+            <li><a class="btn is-disabled" href="#" aria-disabled="true">GitHub <span class="tag-placeholder">Placeholder</span></a></li>
+          </ul>
+
+          <!-- PLACEHOLDER: list only roles you are actually open to. -->
+          <p class="profile__open"><span class="code">Open to</span> <span class="is-placeholder-text">[Security engineering, cloud security, or systems engineering roles — edit me]</span></p>
+        </div>
+
+        <div class="profile__matrix">
+          <h3 class="matrix__title">Skills matrix</h3>
+          <p class="matrix__note">Each row links to the case study that backs it up.</p>
+          <div class="table-wrap">
+            <table class="matrix">
+              <thead>
+                <tr><th scope="col">Area</th><th scope="col">Work covered</th><th scope="col">Evidence</th></tr>
+              </thead>
+              <tbody>
+                <tr class="row--tech"><th scope="row">Dispatch systems</th><td>Intake, assignment, status tracking, audit trails</td><td><a href="#t-01">T-01</a></td></tr>
+                <tr class="row--tech"><th scope="row">Databases</th><td>Modeling, migration, backup &amp; restore</td><td><a href="#t-02">T-02</a></td></tr>
+                <tr class="row--tech"><th scope="row">Networking</th><td>VPS hardening, encrypted tunnels, firewalls</td><td><a href="#t-03">T-03</a></td></tr>
+                <tr class="row--sec"><th scope="row">Detection</th><td>SIEM deployment, log onboarding, rule tuning</td><td><a href="#s-01">S-01</a></td></tr>
+                <tr class="row--sec"><th scope="row">Cloud</th><td>Infrastructure as code, posture review, guardrails</td><td><a href="#s-02">S-02</a> <a href="#s-03">S-03</a></td></tr>
+                <tr class="row--sec"><th scope="row">Identity</th><td>SSO, MFA, lifecycle, role design</td><td><a href="#s-04">S-04</a> <a href="#s-05">S-05</a></td></tr>
+                <tr class="row--sec"><th scope="row">Compliance</th><td>CIS Benchmarks, NIST CSF, SP 800-53, risk registers</td><td><a href="#s-06">S-06</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- PLACEHOLDER: replace with tools you have actually used in real work. -->
+          <div class="toolbox placeholder-block">
+            <span class="tag-placeholder">Placeholder</span>
+            <h3 class="toolbox__title">Toolbox</h3>
+            <ul class="toolbox__list">
+              <li>Linux</li><li>PostgreSQL</li><li>Python</li><li>WireGuard</li><li>Terraform</li>
+              <li>AWS</li><li>Wazuh</li><li>Entra ID</li><li>CIS-CAT</li><li>Git</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         §04 ENGAGEMENT — how a client project runs.
+         Adjust the steps and terms to match how you actually work.
+         ============================================================ -->
+    <section class="engagement sheet" id="engagement" aria-labelledby="eng-process-title">
+      <div class="sheet__label" aria-hidden="true">§04 — Engagement</div>
+      <header class="section-head">
+        <p class="eyebrow">For clients</p>
+        <h2 class="section-title" id="eng-process-title">How a project runs</h2>
+        <p class="section-intro">No surprises. You see the scope and the price in writing before any work starts, and you own everything we build.</p>
+      </header>
+
+      <ol class="flow">
+        <li class="flow__step">
+          <span class="flow__num">01</span>
+          <h3 class="flow__title">Scope call</h3>
+          <p>A short call to understand the problem, the systems involved, and what done looks like.</p>
+        </li>
+        <li class="flow__step">
+          <span class="flow__num">02</span>
+          <h3 class="flow__title">Written proposal</h3>
+          <p>Fixed scope, deliverables, timeline, and price. Nothing starts until you sign off.</p>
+        </li>
+        <li class="flow__step">
+          <span class="flow__num">03</span>
+          <h3 class="flow__title">Build &amp; harden</h3>
+          <p>Work in short increments with regular check-ins. Security is part of the build, not a later phase.</p>
+        </li>
+        <li class="flow__step">
+          <span class="flow__num">04</span>
+          <h3 class="flow__title">Handover</h3>
+          <p>Documentation, runbooks, and credentials transferred to you. Ongoing support if you want it.</p>
+        </li>
+      </ol>
+
+      <dl class="terms">
+        <div><dt>Engagement types</dt><dd>Fixed-scope projects · Ongoing support</dd></div>
+        <div><dt>Best fit</dt><dd>Small companies without a dedicated engineering or security team</dd></div>
+        <div><dt>You keep</dt><dd>All code, configuration, and documentation</dd></div>
+      </dl>
+    </section>
+
+
+    <!-- ============================================================
+         §05 CONTACT — work-order style inquiry form.
+         Delivery is configured in js/contact-form.js (CONTACT_CONFIG).
+         ============================================================ -->
+    <section class="contact sheet" id="contact" aria-labelledby="contact-title">
+      <div class="sheet__label" aria-hidden="true">§05 — Contact</div>
+
+      <div class="contact__grid">
+        <div class="contact__info">
+          <p class="eyebrow">Open a work order</p>
+          <h2 class="section-title" id="contact-title">Tell us what you need</h2>
+          <p class="section-intro">Project inquiry or hiring conversation — same form. Replies come from the founder directly.</p>
+
+          <dl class="contact__direct">
+            <dt>Email</dt>
+            <dd>
+              <!-- PLACEHOLDER: replace with the real address (also update CONTACT_CONFIG in js/contact-form.js). -->
+              <a href="mailto:hello@example.com">hello@example.com</a>
+              <span class="tag-placeholder">Placeholder</span>
+            </dd>
+            <dt>Based in</dt>
+            <dd>
+              <!-- PLACEHOLDER: replace with your city/region, or remove this row. -->
+              <span class="is-placeholder-text">[City, State]</span> · Remote-first
+            </dd>
+          </dl>
+        </div>
+
+        <form class="form" id="contact-form" novalidate data-contact-form>
+          <fieldset class="form__group">
+            <legend class="form__legend">Inquiry type <span class="req" aria-hidden="true">*</span></legend>
+            <div class="choice-row">
+              <label class="choice"><input type="radio" name="type" value="Project inquiry" required checked> <span>Project</span></label>
+              <label class="choice"><input type="radio" name="type" value="Hiring"> <span>Hiring</span></label>
+              <label class="choice"><input type="radio" name="type" value="Other"> <span>Other</span></label>
+            </div>
+          </fieldset>
+
+          <div class="form__row">
+            <div class="field">
+              <label for="f-name">Name <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="100" aria-describedby="f-name-err">
+              <p class="field__error" id="f-name-err"></p>
+            </div>
+            <div class="field">
+              <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="200" aria-describedby="f-email-err">
+              <p class="field__error" id="f-email-err"></p>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label for="f-org">Company <span class="opt">(optional)</span></label>
+              <input id="f-org" name="organization" type="text" autocomplete="organization" maxlength="120">
+            </div>
+            <div class="field">
+              <label for="f-area">Area of interest</label>
+              <select id="f-area" name="area">
+                <option value="Not sure yet">Not sure yet</option>
+                <optgroup label="Track A · Engineering">
+                  <option>T-01 Dispatch (CAD) systems</option>
+                  <option>T-02 Database design &amp; build</option>
+                  <option>T-03 VPS links</option>
+                </optgroup>
+                <optgroup label="Track B · Security">
+                  <option>S-01 SIEM</option>
+                  <option>S-02 Cloud infrastructure</option>
+                  <option>S-03 Cloud security</option>
+                  <option>S-04 Identity &amp; access management</option>
+                  <option>S-05 Role-based access control</option>
+                  <option>S-06 Governance, risk &amp; compliance</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-message">Message <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="f-message" name="message" rows="6" required minlength="20" maxlength="4000" aria-describedby="f-message-hint f-message-err"></textarea>
+            <p class="field__hint" id="f-message-hint">What's the problem, and what does done look like? (20 characters minimum)</p>
+            <p class="field__error" id="f-message-err"></p>
+          </div>
+
+          <!-- Honeypot: hidden from people, often filled by bots. Submissions with a value are dropped. -->
+          <div class="hp" aria-hidden="true">
+            <label for="f-website">Website</label>
+            <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form__actions">
+            <button class="btn btn--solid btn--lg" type="submit">Send work order <span aria-hidden="true">→</span></button>
+            <p class="form__status" role="status" aria-live="polite" data-form-status></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Title block — the "drawing border" footer. -->
+  <footer class="titleblock">
+    <div class="titleblock__cell titleblock__cell--wide">
+      <span class="titleblock__k">Firm</span>
+      <span class="titleblock__v">Asane Solutions LLC</span>
+    </div>
+    <div class="titleblock__cell">
+      <span class="titleblock__k">Disciplines</span>
+      <span class="titleblock__v">Engineering × Cybersecurity</span>
+    </div>
+    <div class="titleblock__cell">
+      <span class="titleblock__k">Doc / Rev</span>
+      <span class="titleblock__v">ASN-WEB / A</span>
+    </div>
+    <div class="titleblock__cell">
+      <span class="titleblock__k">Issued</span>
+      <span class="titleblock__v">© <span data-year>2026</span></span>
+    </div>
+    <div class="titleblock__cell">
+      <a class="titleblock__top" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
