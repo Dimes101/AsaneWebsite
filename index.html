@@ -47,7 +47,7 @@
         <li><a href="#top" data-nav-link><span class="rail__num">00</span>Overview</a></li>
         <li><a href="#engineering" data-nav-link><span class="rail__num">01</span>Engineering</a></li>
         <li><a href="#security" data-nav-link><span class="rail__num">02</span>Security</a></li>
-        <li><a href="#profile" data-nav-link><span class="rail__num">03</span>Profile</a></li>
+        <li><a href="#team" data-nav-link><span class="rail__num">03</span>Team</a></li>
         <li><a href="#engagement" data-nav-link><span class="rail__num">04</span>Engagement</a></li>
         <li><a href="#contact" data-nav-link><span class="rail__num">05</span>Contact</a></li>
       </ol>
@@ -77,10 +77,10 @@
           </p>
 
           <div class="routes" role="group" aria-label="Choose your route">
-            <a class="route" href="#profile">
+            <a class="route" href="#team">
               <span class="route__num">Route 01</span>
-              <span class="route__who">Hiring?</span>
-              <span class="route__what">Skills matrix, project evidence, résumé</span>
+              <span class="route__who">Recruiting?</span>
+              <span class="route__what">Our team: résumés, LinkedIn, skills matrix</span>
               <span class="route__arrow" aria-hidden="true">→</span>
             </a>
             <a class="route route--client" href="#engineering">
@@ -164,8 +164,7 @@
     <!-- ============================================================
          §01 ENGINEERING TRACK
          Each capability = <article class="cap"> with a description, scope list,
-         and a case-study slot. To add a real project, copy a <details class="case">
-         block, remove the "is-placeholder" class and the placeholder tag.
+         and case studies. To add a project, copy a <details class="case"> block.
          ============================================================ -->
     <section class="track track--tech sheet" id="engineering" aria-labelledby="eng-title">
       <div class="sheet__label" aria-hidden="true">§01 — Track A</div>
@@ -178,6 +177,7 @@
             Small companies run on a handful of critical systems. We build them to be understood,
             maintained, and handed over — not just shipped.
           </p>
+          <p class="track__lead"><span class="code">Track lead</span> <a href="#ahmed-hanif">Ahmed Hanif</a>, founder</p>
         </div>
       </header>
 
@@ -197,18 +197,16 @@
         </div>
         <div class="cap__cases">
           <h4 class="cases__title">Case studies</h4>
-          <!-- PLACEHOLDER: illustrative entry only. Replace with a real project or delete. -->
-          <details class="case is-placeholder">
+          <details class="case">
             <summary>
-              <span class="tag-placeholder">Placeholder</span>
-              <span class="case__title">Dispatch board for a non-emergency patient transfer service</span>
-              <span class="case__tags">CAD · Web app · Audit trail</span>
+              <span class="case__kind">Client work · Ahmed Hanif</span>
+              <span class="case__title">EMS dispatch and transport system — Great Lakes Safety Inc.</span>
+              <span class="case__tags">Full-stack · Authentication · Production architecture</span>
             </summary>
             <dl class="case__body">
-              <dt>Problem</dt><dd>Transfer requests came in by phone and lived in a shared spreadsheet. Nobody had one view of which crew was where.</dd>
-              <dt>Approach</dt><dd>A web dispatch board with request intake, crew status, drag-to-assign, and role-based views for dispatch and supervisors.</dd>
-              <dt>Outcome</dt><dd>One live board replaced the spreadsheet, and every transfer carries a time-stamped history.</dd>
-              <dt>Stack</dt><dd>Python, PostgreSQL, server-rendered UI</dd>
+              <dt>Role</dt><dd>Contract full-stack developer &amp; IT consultant, Jul 2026 – present</dd>
+              <dt>Work</dt><dd>Built the system from scratch as the sole developer: frontend, database architecture, authentication, and backend infrastructure. Designed the system architecture with security standards built in, plus structured deployment plans.</dd>
+              <dt>Result</dt><dd>Prepared for full production launch, with ongoing IT consulting and technical support as the platform expands.</dd>
             </dl>
           </details>
         </div>
@@ -230,18 +228,16 @@
         </div>
         <div class="cap__cases">
           <h4 class="cases__title">Case studies</h4>
-          <!-- PLACEHOLDER: illustrative entry only. Replace with a real project or delete. -->
-          <details class="case is-placeholder">
+          <details class="case">
             <summary>
-              <span class="tag-placeholder">Placeholder</span>
-              <span class="case__title">Consolidating customer and job records for a field-service company</span>
-              <span class="case__tags">Schema design · Migration · Backups</span>
+              <span class="case__kind">Client work · Ahmed Hanif</span>
+              <span class="case__title">Database architecture for the EMS dispatch platform</span>
+              <span class="case__tags">Database design · Access control</span>
             </summary>
             <dl class="case__body">
-              <dt>Problem</dt><dd>Customer details, quotes, and job history were split across several spreadsheets with no shared IDs.</dd>
-              <dt>Approach</dt><dd>Modeled the business entities, cleaned and de-duplicated the source data, and migrated it into a relational schema with constraints.</dd>
-              <dt>Outcome</dt><dd>One source of truth for customers and jobs, with nightly backups and a documented restore.</dd>
-              <dt>Stack</dt><dd>PostgreSQL, Python migration scripts</dd>
+              <dt>Role</dt><dd>Same engagement as T-01</dd>
+              <dt>Work</dt><dd>Designed the database architecture behind the dispatch and transport system, which holds patient and operational records.</dd>
+              <dt>Result</dt><dd>A permission-based access model delivered across 22+ database updates. See S-05.</dd>
             </dl>
           </details>
         </div>
@@ -263,18 +259,16 @@
         </div>
         <div class="cap__cases">
           <h4 class="cases__title">Case studies</h4>
-          <!-- PLACEHOLDER: illustrative entry only. Replace with a real project or delete. -->
-          <details class="case is-placeholder">
+          <details class="case">
             <summary>
-              <span class="tag-placeholder">Placeholder</span>
-              <span class="case__title">Private link between an office application and a hosted database</span>
-              <span class="case__tags">VPS · WireGuard · Firewall</span>
+              <span class="case__kind">Contract work · Hasham Rizvi</span>
+              <span class="case__title">VPS hardening and security log integration</span>
+              <span class="case__tags">VPS · Firewall · SSH · Patching</span>
             </summary>
             <dl class="case__body">
-              <dt>Problem</dt><dd>The database accepted connections from the public internet so the office application could reach it.</dd>
-              <dt>Approach</dt><dd>Built a hardened VPS, connected the office system over an encrypted tunnel, and closed the database to everything but the tunnel.</dd>
-              <dt>Outcome</dt><dd>The database is no longer publicly reachable, and the team has a runbook for the link.</dd>
-              <dt>Stack</dt><dd>Linux VPS, WireGuard, host firewall</dd>
+              <dt>Role</dt><dd>Cybersecurity analyst (contract), Jul 2026 – present</dd>
+              <dt>Work</dt><dd>Hardened VPS infrastructure with firewall rules, SSH restrictions, and patching. Integrated the VPS security logs into Microsoft Sentinel alongside Azure.</dd>
+              <dt>Result</dt><dd>A reduced attack surface, with VPS activity searchable next to cloud logs for cross-system investigations.</dd>
             </dl>
           </details>
         </div>
@@ -296,6 +290,7 @@
             Visibility, least privilege, and controls mapped to recognized standards. Every
             engagement ends with evidence you can hand to a customer, insurer, or auditor.
           </p>
+          <p class="track__lead"><span class="code">Track lead</span> <a href="#hasham-rizvi">Hasham Rizvi</a></p>
         </div>
       </header>
 
@@ -315,18 +310,40 @@
         </div>
         <div class="cap__cases">
           <h4 class="cases__title">Case studies</h4>
-          <!-- PLACEHOLDER: illustrative entry only. Replace with a real project or delete. -->
-          <details class="case is-placeholder">
+          <details class="case">
             <summary>
-              <span class="tag-placeholder">Placeholder</span>
-              <span class="case__title">Centralized logging and alerting for a multi-site office</span>
-              <span class="case__tags">SIEM · Detection · Playbooks</span>
+              <span class="case__kind">Contract work · Hasham Rizvi</span>
+              <span class="case__title">Security monitoring and detection in Microsoft Sentinel</span>
+              <span class="case__tags">Sentinel · KQL · Incident response</span>
             </summary>
             <dl class="case__body">
-              <dt>Problem</dt><dd>Logs stayed on each server and firewall. Nobody would have noticed a failed-login spike until something broke.</dd>
-              <dt>Approach</dt><dd>Deployed an open-source SIEM, onboarded servers, firewalls, and identity logs, and wrote rules for the events the team cared about.</dd>
-              <dt>Outcome</dt><dd>One console for security events, with alerts routed to the right person and a playbook for each.</dd>
-              <dt>Stack</dt><dd>Wazuh, syslog, Windows event forwarding</dd>
+              <dt>Role</dt><dd>Cybersecurity analyst (contract), Jul 2026 – present</dd>
+              <dt>Work</dt><dd>Integrated Azure and VPS security logs into Microsoft Sentinel. Wrote KQL analytics rules to detect privilege escalation, logging changes, and suspicious activity. Triaged alerts and correlated logs to separate real threats from false positives.</dd>
+              <dt>Result</dt><dd>Documented alert-review, escalation, and containment procedures for consistent incident response.</dd>
+            </dl>
+          </details>
+          <details class="case">
+            <summary>
+              <span class="case__kind">Project · Hasham Rizvi</span>
+              <span class="case__title">AI-augmented alert triage pipeline</span>
+              <span class="case__tags">Automation · Managed identity · Analyst review</span>
+            </summary>
+            <dl class="case__body">
+              <dt>Work</dt><dd>Automated incident review every 15 minutes to prioritize alerts and track evidence. Replaced hardcoded credentials with managed identity access to Key Vault and Cosmos DB. Built a dashboard where analysts approve, reject, or flag AI-generated classifications before any action is taken.</dd>
+              <dt>Result</dt><dd>Corrected a misconfigured API endpoint and reprocessed all 29 incidents that had failed enrichment.</dd>
+              <dt>Repo</dt><dd><a href="https://github.com/HashRiz1/ai-alert-triage-pipeline" target="_blank" rel="noopener">github.com/HashRiz1/ai-alert-triage-pipeline</a></dd>
+            </dl>
+          </details>
+          <details class="case">
+            <summary>
+              <span class="case__kind">Lab · Hasham Rizvi</span>
+              <span class="case__title">Wazuh SIEM lab</span>
+              <span class="case__tags">Wazuh · Sysmon · Defender</span>
+            </summary>
+            <dl class="case__body">
+              <dt>Work</dt><dd>Deployed a Wazuh SIEM with Sysmon and Defender integration to monitor Linux and Windows alerts. Wrote custom detection rules and assessed vulnerabilities, malware exposure, and system hardening.</dd>
+              <dt>Result</dt><dd>Vulnerability findings investigated, remediated, and verified end to end using Wazuh's vulnerability report, with each step documented.</dd>
+              <dt>Repo</dt><dd><a href="https://github.com/HashRiz1/SIEM-Lab" target="_blank" rel="noopener">github.com/HashRiz1/SIEM-Lab</a></dd>
             </dl>
           </details>
         </div>
@@ -348,18 +365,16 @@
         </div>
         <div class="cap__cases">
           <h4 class="cases__title">Case studies</h4>
-          <!-- PLACEHOLDER: illustrative entry only. Replace with a real project or delete. -->
-          <details class="case is-placeholder">
+          <details class="case">
             <summary>
-              <span class="tag-placeholder">Placeholder</span>
-              <span class="case__title">Rebuilding a hand-configured cloud account as code</span>
-              <span class="case__tags">Terraform · Networking · Environments</span>
+              <span class="case__kind">Lab · Hasham Rizvi</span>
+              <span class="case__title">AWS cloud security lab</span>
+              <span class="case__tags">AWS · VPC · IAM · CloudTrail</span>
             </summary>
             <dl class="case__body">
-              <dt>Problem</dt><dd>Production had been built by hand over several years. Nobody could say what every resource was for.</dd>
-              <dt>Approach</dt><dd>Inventoried the account, rewrote it as Terraform modules, and split staging from production.</dd>
-              <dt>Outcome</dt><dd>Every change goes through code review, and the environment can be rebuilt from the repository.</dd>
-              <dt>Stack</dt><dd>Terraform, AWS VPC, EC2, S3</dd>
+              <dt>Work</dt><dd>Configured an EC2 instance with an IAM role granting read-only S3 access, simulating limited application permissions. Restricted inbound traffic to required services with VPC and security group controls.</dd>
+              <dt>Result</dt><dd>Separate admin and user IAM accounts, public S3 access blocked, and CloudTrail management-event logging enabled.</dd>
+              <dt>Repo</dt><dd><a href="https://github.com/HashRiz1/AWS-Cloud-Security-Lab" target="_blank" rel="noopener">github.com/HashRiz1/AWS-Cloud-Security-Lab</a></dd>
             </dl>
           </details>
         </div>
@@ -381,18 +396,16 @@
         </div>
         <div class="cap__cases">
           <h4 class="cases__title">Case studies</h4>
-          <!-- PLACEHOLDER: illustrative entry only. Replace with a real project or delete. -->
-          <details class="case is-placeholder">
+          <details class="case">
             <summary>
-              <span class="tag-placeholder">Placeholder</span>
-              <span class="case__title">Security posture review and remediation for a small SaaS team</span>
-              <span class="case__tags">Posture review · Remediation · Guardrails</span>
+              <span class="case__kind">Project · Hasham Rizvi</span>
+              <span class="case__title">Azure cloud posture assessment and remediation</span>
+              <span class="case__tags">Azure · Defender for Cloud · Azure Policy</span>
             </summary>
             <dl class="case__body">
-              <dt>Problem</dt><dd>The team had grown fast and wasn't sure what was exposed in their cloud account.</dd>
-              <dt>Approach</dt><dd>Ran a configuration review, ranked findings by real-world risk, fixed the critical ones together, and added guardrails.</dd>
-              <dt>Outcome</dt><dd>Public exposure closed, audit logging turned on account-wide, and a short list of remaining work with owners.</dd>
-              <dt>Stack</dt><dd>AWS Config, CloudTrail, IAM Access Analyzer</dd>
+              <dt>Work</dt><dd>Remediated public storage exposure, unrestricted remote-access ports, and excessive administrator permissions. Deployed 2 Azure Policy guardrails and a CLI script that detects and remediates storage and NSG misconfigurations.</dd>
+              <dt>Result</dt><dd>Cloud secure score raised from 4% to 92%. Benchmark results are under S-06.</dd>
+              <dt>Repo</dt><dd><a href="https://github.com/HashRiz1/azure-cloud-posture-assessment" target="_blank" rel="noopener">github.com/HashRiz1/azure-cloud-posture-assessment</a></dd>
             </dl>
           </details>
         </div>
@@ -414,18 +427,16 @@
         </div>
         <div class="cap__cases">
           <h4 class="cases__title">Case studies</h4>
-          <!-- PLACEHOLDER: illustrative entry only. Replace with a real project or delete. -->
-          <details class="case is-placeholder">
+          <details class="case">
             <summary>
-              <span class="tag-placeholder">Placeholder</span>
-              <span class="case__title">Identity cleanup and single sign-on rollout</span>
-              <span class="case__tags">SSO · MFA · Offboarding</span>
+              <span class="case__kind">Lab · Hasham Rizvi</span>
+              <span class="case__title">Active Directory &amp; IAM lab</span>
+              <span class="case__tags">Active Directory · Group Policy</span>
             </summary>
             <dl class="case__body">
-              <dt>Problem</dt><dd>Staff had separate passwords for every app, several shared logins, and former employees still had access.</dd>
-              <dt>Approach</dt><dd>Moved apps behind single sign-on, enforced MFA, retired shared accounts, and wrote an offboarding checklist.</dd>
-              <dt>Outcome</dt><dd>One identity per person, and access removal handled in one place.</dd>
-              <dt>Stack</dt><dd>Microsoft Entra ID, SAML/OIDC</dd>
+              <dt>Work</dt><dd>Simulated an enterprise Windows domain with centralized user authentication and security-policy enforcement across domain-joined systems, plus group-based access control for a department file share.</dd>
+              <dt>Result</dt><dd>Domain-wide password and lockout policy through Group Policy: 12-character minimum password, lockout after 3 failed attempts.</dd>
+              <dt>Repo</dt><dd><a href="https://github.com/HashRiz1/active-directory-iam-lab" target="_blank" rel="noopener">github.com/HashRiz1/active-directory-iam-lab</a></dd>
             </dl>
           </details>
         </div>
@@ -447,18 +458,28 @@
         </div>
         <div class="cap__cases">
           <h4 class="cases__title">Case studies</h4>
-          <!-- PLACEHOLDER: illustrative entry only. Replace with a real project or delete. -->
-          <details class="case is-placeholder">
+          <details class="case">
             <summary>
-              <span class="tag-placeholder">Placeholder</span>
-              <span class="case__title">Role model for an internal records application</span>
-              <span class="case__tags">RBAC · Least privilege · Access review</span>
+              <span class="case__kind">Client work · Ahmed Hanif</span>
+              <span class="case__title">Permission-based access to patient records — Great Lakes Safety Inc.</span>
+              <span class="case__tags">Access control · Sensitive data</span>
             </summary>
             <dl class="case__body">
-              <dt>Problem</dt><dd>Everyone in the application was effectively an administrator.</dd>
-              <dt>Approach</dt><dd>Interviewed each team, defined roles from what they actually needed, built a permission matrix, and migrated users onto it.</dd>
-              <dt>Outcome</dt><dd>Administrative access limited to the people who need it, with a scheduled access review.</dd>
-              <dt>Stack</dt><dd>Application-level RBAC, PostgreSQL row-level security</dd>
+              <dt>Role</dt><dd>Contract full-stack developer, Jul 2026 – present</dd>
+              <dt>Work</dt><dd>Built a permission-based system governing access to patient and operational records, delivered across 22+ database updates.</dd>
+              <dt>Result</dt><dd>Secure, compliant access to sensitive records, built into the platform before launch.</dd>
+            </dl>
+          </details>
+          <details class="case">
+            <summary>
+              <span class="case__kind">Work experience · Hasham Rizvi</span>
+              <span class="case__title">Least-privilege access for a retail business</span>
+              <span class="case__tags">Least privilege · Credential hygiene</span>
+            </summary>
+            <dl class="case__body">
+              <dt>Role</dt><dd>IT technician, Bhabhi Boutique, Oct 2024 – Jan 2026</dd>
+              <dt>Work</dt><dd>Managed user access across 4 business platforms using least-privilege principles. Enforced credential hygiene across accounts and devices.</dd>
+              <dt>Result</dt><dd>Limited exposure on each platform and reduced the risk of credential misuse.</dd>
             </dl>
           </details>
         </div>
@@ -480,18 +501,16 @@
         </div>
         <div class="cap__cases">
           <h4 class="cases__title">Case studies</h4>
-          <!-- PLACEHOLDER: illustrative entry only. Replace with a real project or delete. -->
-          <details class="case is-placeholder">
+          <details class="case">
             <summary>
-              <span class="tag-placeholder">Placeholder</span>
-              <span class="case__title">CIS baseline and NIST CSF gap assessment</span>
-              <span class="case__tags">CIS Benchmarks · NIST CSF · Risk register</span>
+              <span class="case__kind">Project · Hasham Rizvi</span>
+              <span class="case__title">CIS Azure Foundations benchmark alignment</span>
+              <span class="case__tags">CIS Benchmarks · Microsoft Cloud Security Benchmark</span>
             </summary>
             <dl class="case__body">
-              <dt>Problem</dt><dd>A customer questionnaire asked how the company aligned with NIST, and there was no good answer.</dd>
-              <dt>Approach</dt><dd>Scanned servers and workstations against CIS Benchmarks, mapped existing controls to NIST CSF functions, and logged the gaps as risks.</dd>
-              <dt>Outcome</dt><dd>A prioritized remediation roadmap and a written answer the company could stand behind.</dd>
-              <dt>Stack</dt><dd>CIS-CAT, NIST CSF 2.0, risk register</dd>
+              <dt>Work</dt><dd>Measured an Azure environment against the CIS Azure Foundations Benchmark and the Microsoft Cloud Security Benchmark, then remediated the gaps (see S-03).</dd>
+              <dt>Result</dt><dd>68 of 81 CIS Azure Foundations controls met, and 55 of 63 Microsoft Cloud Security Benchmark controls passed.</dd>
+              <dt>Repo</dt><dd><a href="https://github.com/HashRiz1/azure-cloud-posture-assessment" target="_blank" rel="noopener">github.com/HashRiz1/azure-cloud-posture-assessment</a></dd>
             </dl>
           </details>
         </div>
@@ -500,67 +519,83 @@
 
 
     <!-- ============================================================
-         §03 PROFILE — for recruiters and hiring managers.
-         Everything about the founder is PLACEHOLDER until edited.
+         §03 TEAM — for recruiters and hiring managers.
+         Profiles are drawn from each person's résumé (assets/resumes/).
          ============================================================ -->
-    <section class="profile sheet" id="profile" aria-labelledby="profile-title">
-      <div class="sheet__label" aria-hidden="true">§03 — Profile</div>
+    <section class="team sheet" id="team" aria-labelledby="team-title">
+      <div class="sheet__label" aria-hidden="true">§03 — Team</div>
+      <header class="section-head">
+        <p class="eyebrow">For recruiters &amp; hiring managers</p>
+        <h2 class="section-title" id="team-title">The people behind the work</h2>
+        <p class="section-intro">One engineer per track. Every case study above names who did the work. Résumés and LinkedIn are below.</p>
+      </header>
 
-      <div class="profile__grid">
-        <div class="profile__card">
-          <p class="eyebrow">For hiring teams</p>
-          <h2 class="profile__title" id="profile-title">
-            <!-- PLACEHOLDER: replace with the founder's name. -->
-            <span class="is-placeholder-text">[Founder Name]</span>
-          </h2>
-          <p class="profile__role">Founder &amp; Principal Engineer, Asane Solutions LLC</p>
-
-          <!-- PLACEHOLDER: replace this bio with your own. Do not list certifications you don't hold. -->
-          <div class="placeholder-block">
-            <span class="tag-placeholder">Placeholder</span>
-            <p>I build operational systems and secure them — from the database schema to the access policy. I started Asane Solutions to give small companies the same engineering discipline and security controls that larger ones take for granted.</p>
-          </div>
-
-          <!-- PLACEHOLDER: point these at your real résumé and profiles, then remove aria-disabled. -->
-          <ul class="profile__links">
-            <li><a class="btn btn--solid is-disabled" href="#" aria-disabled="true">Résumé (PDF) <span class="tag-placeholder">Placeholder</span></a></li>
-            <li><a class="btn is-disabled" href="#" aria-disabled="true">LinkedIn <span class="tag-placeholder">Placeholder</span></a></li>
-            <li><a class="btn is-disabled" href="#" aria-disabled="true">GitHub <span class="tag-placeholder">Placeholder</span></a></li>
+      <div class="team__grid">
+        <article class="person person--tech" id="ahmed-hanif" aria-labelledby="ahmed-name">
+          <p class="person__track"><span class="track-letter" aria-hidden="true">A</span> Founder · Engineering track</p>
+          <h3 class="person__name" id="ahmed-name">Ahmed Hanif</h3>
+          <p class="person__role">Full-stack developer &amp; IT consultant</p>
+          <p class="person__bio">Builds operational systems end to end. Currently the sole developer on an EMS dispatch and transport platform, covering the frontend, database, authentication, and infrastructure. Background in business intelligence. Led a five-person consulting team on a live client engagement.</p>
+          <dl class="person__facts">
+            <dt>Education</dt>
+            <dd>M.S. Information Technology Systems &amp; Management, UT Dallas (expected May 2027)<br>B.B.A. Computer/IT Administration &amp; Management, UT Dallas (May 2026)</dd>
+            <dt>Certifications</dt>
+            <dd>Agile Explorer (IBM) · Navigating the Project Management Lifecycle (IBM)</dd>
+            <dt>Work status</dt>
+            <dd>US citizen, no sponsorship required</dd>
+          </dl>
+          <ul class="chips" aria-label="Tools and languages">
+            <li>React 18</li><li>Node.js</li><li>Supabase / PostgreSQL</li><li>TypeScript</li><li>JavaScript</li>
+            <li>Python</li><li>SQL</li><li>Power BI</li><li>Git / GitHub</li>
           </ul>
+          <ul class="person__links">
+            <li><a class="btn btn--solid" href="assets/resumes/ahmed-hanif-resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
+            <li><a class="btn" href="https://www.linkedin.com/in/ahmedahanif/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </article>
 
-          <!-- PLACEHOLDER: list only roles you are actually open to. -->
-          <p class="profile__open"><span class="code">Open to</span> <span class="is-placeholder-text">[Security engineering, cloud security, or systems engineering roles — edit me]</span></p>
-        </div>
+        <article class="person person--sec" id="hasham-rizvi" aria-labelledby="hasham-name">
+          <p class="person__track"><span class="track-letter" aria-hidden="true">B</span> Cybersecurity track lead</p>
+          <h3 class="person__name" id="hasham-name">Hasham Rizvi</h3>
+          <p class="person__role">Cybersecurity analyst</p>
+          <p class="person__bio">Focused on detection and cloud security. Works in Microsoft Sentinel and Wazuh, writes KQL detection rules, and hardens Azure, AWS, and Linux environments against CIS Benchmarks. Oversees all work on the cybersecurity track.</p>
+          <dl class="person__facts">
+            <dt>Education</dt>
+            <dd>B.S. Computer Information Systems &amp; Technology, UT Dallas (expected Dec 2027)</dd>
+            <dt>Certifications</dt>
+            <dd>Google Cybersecurity Professional Certificate</dd>
+          </dl>
+          <ul class="chips" aria-label="Tools and platforms">
+            <li>Microsoft Sentinel</li><li>Defender for Cloud</li><li>Wazuh</li><li>Sysmon</li><li>KQL</li>
+            <li>Azure</li><li>AWS</li><li>Active Directory</li><li>Group Policy</li><li>MITRE ATT&amp;CK</li>
+            <li>Python</li><li>Bash</li><li>Linux</li><li>Windows Server</li>
+          </ul>
+          <ul class="person__links">
+            <li><a class="btn btn--solid" href="assets/resumes/hasham-rizvi-resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
+            <li><a class="btn" href="https://www.linkedin.com/in/hasham-rizvi/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a class="btn" href="https://github.com/HashRiz1" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </article>
+      </div>
 
-        <div class="profile__matrix">
-          <h3 class="matrix__title">Skills matrix</h3>
-          <p class="matrix__note">Each row links to the case study that backs it up.</p>
-          <div class="table-wrap">
-            <table class="matrix">
-              <thead>
-                <tr><th scope="col">Area</th><th scope="col">Work covered</th><th scope="col">Evidence</th></tr>
-              </thead>
-              <tbody>
-                <tr class="row--tech"><th scope="row">Dispatch systems</th><td>Intake, assignment, status tracking, audit trails</td><td><a href="#t-01">T-01</a></td></tr>
-                <tr class="row--tech"><th scope="row">Databases</th><td>Modeling, migration, backup &amp; restore</td><td><a href="#t-02">T-02</a></td></tr>
-                <tr class="row--tech"><th scope="row">Networking</th><td>VPS hardening, encrypted tunnels, firewalls</td><td><a href="#t-03">T-03</a></td></tr>
-                <tr class="row--sec"><th scope="row">Detection</th><td>SIEM deployment, log onboarding, rule tuning</td><td><a href="#s-01">S-01</a></td></tr>
-                <tr class="row--sec"><th scope="row">Cloud</th><td>Infrastructure as code, posture review, guardrails</td><td><a href="#s-02">S-02</a> <a href="#s-03">S-03</a></td></tr>
-                <tr class="row--sec"><th scope="row">Identity</th><td>SSO, MFA, lifecycle, role design</td><td><a href="#s-04">S-04</a> <a href="#s-05">S-05</a></td></tr>
-                <tr class="row--sec"><th scope="row">Compliance</th><td>CIS Benchmarks, NIST CSF, SP 800-53, risk registers</td><td><a href="#s-06">S-06</a></td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <!-- PLACEHOLDER: replace with tools you have actually used in real work. -->
-          <div class="toolbox placeholder-block">
-            <span class="tag-placeholder">Placeholder</span>
-            <h3 class="toolbox__title">Toolbox</h3>
-            <ul class="toolbox__list">
-              <li>Linux</li><li>PostgreSQL</li><li>Python</li><li>WireGuard</li><li>Terraform</li>
-              <li>AWS</li><li>Wazuh</li><li>Entra ID</li><li>CIS-CAT</li><li>Git</li>
-            </ul>
-          </div>
+      <div class="team__matrix">
+        <h3 class="matrix__title">Skills matrix</h3>
+        <p class="matrix__note">Each row links to the case studies that back it up.</p>
+        <div class="table-wrap">
+          <table class="matrix">
+            <thead>
+              <tr><th scope="col">Area</th><th scope="col">Work covered</th><th scope="col">Who</th><th scope="col">Evidence</th></tr>
+            </thead>
+            <tbody>
+              <tr class="row--tech"><th scope="row">Dispatch systems</th><td>EMS dispatch &amp; transport, built end to end</td><td>Ahmed</td><td><a href="#t-01">T-01</a></td></tr>
+              <tr class="row--tech"><th scope="row">Databases</th><td>Database architecture, permission model</td><td>Ahmed</td><td><a href="#t-02">T-02</a> <a href="#s-05">S-05</a></td></tr>
+              <tr class="row--tech"><th scope="row">Infrastructure</th><td>VPS firewall rules, SSH restrictions, patching</td><td>Hasham</td><td><a href="#t-03">T-03</a></td></tr>
+              <tr class="row--sec"><th scope="row">Detection</th><td>Sentinel, Wazuh, KQL rules, alert triage</td><td>Hasham</td><td><a href="#s-01">S-01</a></td></tr>
+              <tr class="row--sec"><th scope="row">Cloud</th><td>AWS &amp; Azure security controls, posture remediation</td><td>Hasham</td><td><a href="#s-02">S-02</a> <a href="#s-03">S-03</a></td></tr>
+              <tr class="row--sec"><th scope="row">Identity</th><td>Active Directory, Group Policy, least privilege, permission-based access</td><td>Hasham, Ahmed</td><td><a href="#s-04">S-04</a> <a href="#s-05">S-05</a></td></tr>
+              <tr class="row--sec"><th scope="row">Compliance</th><td>CIS Azure Foundations, Microsoft Cloud Security Benchmark</td><td>Hasham</td><td><a href="#s-06">S-06</a></td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -605,6 +640,7 @@
         <div><dt>Engagement types</dt><dd>Fixed-scope projects · Ongoing support</dd></div>
         <div><dt>Best fit</dt><dd>Small companies without a dedicated engineering or security team</dd></div>
         <div><dt>You keep</dt><dd>All code, configuration, and documentation</dd></div>
+        <div><dt>Who you work with</dt><dd><a href="#ahmed-hanif">Ahmed Hanif</a>, founder · <a href="#hasham-rizvi">Hasham Rizvi</a>, cybersecurity</dd></div>
       </dl>
     </section>
 
@@ -619,8 +655,8 @@
       <div class="contact__grid">
         <div class="contact__info">
           <p class="eyebrow">Open a work order</p>
-          <h2 class="section-title" id="contact-title">Tell us what you need</h2>
-          <p class="section-intro">Project inquiry or hiring conversation — same form. Replies come from the founder directly.</p>
+          <h2 class="section-title" id="contact-title">Tell us about your project</h2>
+          <p class="section-intro">For client inquiries. You'll hear back from the people who will do the work. Recruiters: find Ahmed and Hasham on LinkedIn in the <a href="#team">team section</a>.</p>
 
           <dl class="contact__direct">
             <dt>Email</dt>
@@ -631,21 +667,12 @@
             </dd>
             <dt>Based in</dt>
             <dd>
-              <!-- PLACEHOLDER: replace with your city/region, or remove this row. -->
-              <span class="is-placeholder-text">[City, State]</span> · Remote-first
+              Dallas, TX · Remote
             </dd>
           </dl>
         </div>
 
         <form class="form" id="contact-form" novalidate data-contact-form>
-          <fieldset class="form__group">
-            <legend class="form__legend">Inquiry type <span class="req" aria-hidden="true">*</span></legend>
-            <div class="choice-row">
-              <label class="choice"><input type="radio" name="type" value="Project inquiry" required checked> <span>Project</span></label>
-              <label class="choice"><input type="radio" name="type" value="Hiring"> <span>Hiring</span></label>
-              <label class="choice"><input type="radio" name="type" value="Other"> <span>Other</span></label>
-            </div>
-          </fieldset>
 
           <div class="form__row">
             <div class="field">
