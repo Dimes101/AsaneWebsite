@@ -27,9 +27,16 @@ python3 -m http.server 8000
 
 ## Deploy
 
-Upload the folder as-is to any static host:
+**GitHub Pages (set up):** `.github/workflows/pages.yml` publishes the site on every push to `main`. It only uploads the site files, so the README isn't published.
 
-- **GitHub Pages:** Settings → Pages → Deploy from branch → `main` / root.
+1. One-time: repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+2. Push to `main`, or run the workflow by hand from the **Actions** tab ("Deploy to GitHub Pages" → Run workflow).
+3. The site goes live at `https://<user>.github.io/AsaneWebsite/`. The URL also appears in the workflow run summary.
+
+For a custom domain, add it under Settings → Pages → Custom domain, then point your DNS at GitHub as that page explains.
+
+Other static hosts work too. Upload the folder as-is:
+
 - **Netlify / Cloudflare Pages / Vercel:** connect the repo. Leave the build command empty and set the publish directory to `/`.
 - **Any web server:** copy the files into the web root.
 
