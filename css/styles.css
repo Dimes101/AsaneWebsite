@@ -486,6 +486,15 @@ main, .titleblock { margin-left: var(--rail-w); }
 }
 .case { border: 1px solid var(--line-strong); background: var(--ink-2); }
 .case + .case { margin-top: 12px; }
+.case-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: .8125rem;
+  color: var(--accent);
+  text-underline-offset: 4px;
+}
+.case-link:hover { color: var(--text); }
 
 .case summary {
   display: grid;
@@ -632,6 +641,8 @@ main, .titleblock { margin-left: var(--rail-w); }
 .matrix td { color: var(--text-dim); }
 .matrix td:last-child { white-space: nowrap; padding-right: 0; }
 .matrix td:nth-child(3) { white-space: nowrap; font-family: var(--font-mono); font-size: .8125rem; }
+.matrix--prose td:last-child { white-space: normal; }
+.matrix--prose tbody th { width: 1%; }
 .matrix td a {
   font-family: var(--font-mono);
   font-size: .8125rem;
@@ -799,6 +810,106 @@ main, .titleblock { margin-left: var(--rail-w); }
 .titleblock__top { margin: auto 0; text-decoration: none; color: var(--text-dim); white-space: nowrap; }
 .titleblock__top:hover { color: var(--text); }
 
+/* 12b. Case file pages (glps.html) ------------------------------------------ */
+.rail__back {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-family: var(--font-mono);
+  font-size: .8125rem;
+  color: var(--text-dim);
+  text-decoration: none;
+}
+.rail__back:hover { color: var(--text); }
+
+.casefile { --accent: var(--tech); padding-top: clamp(80px, 8vw, 112px); }
+.casefile__title { max-width: 18ch; }
+.casefile__lede { max-width: 44rem; }
+.casemeta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  margin: 48px 0 0;
+  border: 1px solid var(--line-strong);
+  background: var(--line-strong);
+}
+.casemeta > div { padding: 16px 20px; background: var(--black); }
+.casemeta dt {
+  margin-bottom: 6px;
+  font-family: var(--font-mono);
+  font-size: .6875rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--tech);
+}
+.casemeta dd { margin: 0; }
+.casemeta a { text-underline-offset: 4px; }
+
+.brief { --accent: var(--tech); display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 5vw, 80px); }
+.brief .section-head { margin-bottom: 0; }
+.brief__body { color: var(--text-dim); font-size: 1.0625rem; }
+.brief__body .scope { margin: 0 0 1em; }
+.brief__body .scope li { color: var(--text-dim); font-size: 1rem; }
+
+.model-figure { margin: 0 0 clamp(40px, 5vw, 64px); }
+.model-figure__scroll { overflow-x: auto; padding-bottom: 8px; }
+.model-diagram { min-width: 720px; }
+.model-figure__hint { display: none; margin: 0 0 8px; font-family: var(--font-mono); font-size: .75rem; color: var(--grey); }
+@media (max-width: 760px) { .model-figure__hint { display: block; } }
+.diagram marker path { fill: var(--tech); stroke: none; }
+.dg-rail { stroke: var(--line-strong); stroke-width: 2; }
+.dg-status circle { fill: var(--black); stroke: var(--text-dim); stroke-width: 1.5; }
+.dg-status circle.is-stamp { fill: var(--tech); stroke: var(--tech); }
+.dg-status text { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; fill: var(--text); }
+.dg-stamp { font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; }
+
+.stage {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 2.3fr);
+  gap: clamp(20px, 3vw, 48px);
+  padding: 36px 0;
+  border-top: 1px solid var(--line-strong);
+}
+.stage:last-child { border-bottom: 1px solid var(--line-strong); }
+.stage .cap__id .code { display: block; margin-bottom: 10px; color: var(--accent); text-transform: uppercase; }
+.stage .scope li { color: var(--text-dim); }
+
+.delivery { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 64px); align-items: start; }
+.steps { border-top: 1px solid var(--line-strong); }
+.steps li {
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  gap: 12px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-dim);
+}
+.steps__n { font-family: var(--font-mono); font-size: .8125rem; color: var(--grey); }
+.steps__s {
+  padding: 2px 8px;
+  border: 1px solid var(--line-strong);
+  font-family: var(--font-mono);
+  font-size: .6875rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--tech);
+}
+.steps li.is-done { color: var(--text); }
+.steps li.is-done .steps__s { color: var(--black); background: var(--tech); border-color: var(--tech); }
+.figures { grid-template-columns: 1fr; }
+
+.casefile__next {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 20px;
+  margin-top: clamp(48px, 6vw, 80px);
+  padding-top: 32px;
+  border-top: 1px solid var(--line-strong);
+}
+.casefile__next p { margin: 0 auto 0 0; font-size: 1.125rem; }
+
 /* 12. Motion & responsive --------------------------------------------------- */
 
 /* Diagram: plotted in once on load, then a packet travels the tunnel */
@@ -898,6 +1009,7 @@ main, .titleblock { margin-left: var(--rail-w); }
   .hero__figure { max-width: 520px; }
   .contact__grid { grid-template-columns: 1fr; }
   .team__grid { grid-template-columns: 1fr; }
+  .brief, .delivery { grid-template-columns: 1fr; }
   .person { scroll-margin-top: 76px; }
   .titleblock { grid-template-columns: 1fr 1fr; }
   .titleblock__cell--wide { grid-column: 1 / -1; }
@@ -923,6 +1035,8 @@ main, .titleblock { margin-left: var(--rail-w); }
   .case__body { grid-template-columns: 1fr; }
   .case__body dd { border-top: 0; padding-top: 0; }
 
+  .stage { grid-template-columns: 1fr; gap: 16px; padding: 28px 0; }
+  .casefile__next .btn { width: 100%; }
   .flow { grid-template-columns: 1fr; gap: 28px; }
   .flow__step { padding: 0 0 0 48px; }
   .flow__step::before { top: 28px; bottom: -28px; left: 13px; right: auto; width: 1px; height: auto; }

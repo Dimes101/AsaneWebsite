@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GLPS Dispatch — Asane Solutions</title>
+  <meta name="description" content="Case file: the computer-aided dispatch and patient-care records system Asane Solutions is building for Great Lakes Patient Services, a non-emergency medical transport operator in Ontario.">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta property="og:title" content="GLPS Dispatch — Asane Solutions">
+  <meta property="og:description" content="A computer-aided dispatch system for non-emergency patient transport, built to hold patient health information safely.">
+  <meta property="og:type" content="article">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       CASE FILE — Great Lakes Patient Services (GLPS).
+       Public, case-study level only. Infrastructure details (hostnames,
+       server setup, ports, backup locations) and open issues from the
+       private repository are deliberately left out.
+       ============================================================ -->
+  <header class="rail" data-rail>
+    <a class="rail__brand" href="index.html" aria-label="Asane Solutions, home">
+      <svg class="rail__mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M4 28 L16 4 L28 28" fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M9 19 H23" fill="none" stroke="var(--sec)" stroke-width="2.5"/>
+      </svg>
+      <span class="rail__name">Asane <br>Solutions</span>
+    </a>
+
+    <button class="rail__toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+      <span class="rail__toggle-label">Menu</span>
+      <span class="rail__toggle-icon" aria-hidden="true"></span>
+    </button>
+
+    <nav class="rail__nav" id="site-nav" aria-label="Case file">
+      <a class="rail__back" href="index.html#t-01">← All work</a>
+      <p class="rail__caption" aria-hidden="true">Case file · T-01</p>
+      <ol class="rail__list">
+        <li><a href="#top" data-nav-link><span class="rail__num">00</span>Overview</a></li>
+        <li><a href="#brief" data-nav-link><span class="rail__num">01</span>The brief</a></li>
+        <li><a href="#model" data-nav-link><span class="rail__num">02</span>CAD model</a></li>
+        <li><a href="#safeguards" data-nav-link><span class="rail__num">03</span>Safeguards</a></li>
+        <li><a href="#delivery" data-nav-link><span class="rail__num">04</span>Delivery</a></li>
+      </ol>
+      <a class="btn btn--solid rail__cta" href="index.html#contact">Start an inquiry</a>
+      <p class="rail__meta" aria-hidden="true">DOC ASN-GLPS · REV A</p>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- §00 OVERVIEW ------------------------------------------------- -->
+    <section class="sheet casefile" id="top" aria-labelledby="case-title">
+      <div class="sheet__label" aria-hidden="true">§00 — Case file T-01</div>
+      <p class="eyebrow">Client work · Computer-aided dispatch</p>
+      <h1 class="hero__title casefile__title" id="case-title">
+        Dispatch for Great Lakes Patient Services
+      </h1>
+      <p class="hero__lede casefile__lede">
+        A computer-aided dispatch (CAD) and patient-care records system for a non-emergency medical
+        transport operator in Ontario. It started as a single-file prototype holding everything in
+        memory. We are turning it into a multi-user application with a real database, sign-in,
+        and access control strong enough for patient health information.
+      </p>
+
+      <dl class="casemeta">
+        <div><dt>Client</dt><dd>Great Lakes Patient Services (GLPS), Ontario</dd></div>
+        <div><dt>Engagement</dt><dd>Contract, Jul 2026 – present</dd></div>
+        <div><dt>Built by</dt><dd><a href="index.html#ahmed-hanif">Ahmed Hanif</a>, sole developer &amp; IT consultant</dd></div>
+        <div><dt>Status</dt><dd>Core system built. Final features and production hosting in progress.</dd></div>
+        <div><dt>Stack</dt><dd>React 18 · TypeScript · Vite · PostgreSQL (self-hosted Supabase stack)</dd></div>
+      </dl>
+    </section>
+
+
+    <!-- §01 THE BRIEF ------------------------------------------------ -->
+    <section class="sheet" id="brief" aria-labelledby="brief-title">
+      <div class="sheet__label" aria-hidden="true">§01 — The brief</div>
+      <div class="brief">
+        <header class="section-head">
+          <p class="eyebrow">What GLPS needed</p>
+          <h2 class="section-title" id="brief-title">From prototype to a system of record</h2>
+        </header>
+        <div class="brief__body">
+          <p>GLPS runs non-emergency patient transfers: stretcher, wheelchair, and ambulatory. Their dispatch tool worked as a demo. Units, calls, schedules, and patient care reports all lived in one HTML file and vanished on reload.</p>
+          <p>The brief had three conditions:</p>
+          <ul class="scope scope--tech">
+            <li><strong>No regressions.</strong> Every feature of the prototype survives, now backed by a database.</li>
+            <li><strong>Access enforced at the database</strong>, not just by hiding screens, so nobody can bypass it through the API.</li>
+            <li><strong>Built to hold patient health information.</strong> Encryption, audit logging, and role-based access come before any real patient data goes in.</li>
+          </ul>
+          <p>The work runs as a seven-step plan, one step at a time. Each step is verified before the next one starts.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- §02 THE CAD MODEL -------------------------------------------- -->
+    <section class="sheet track track--tech" id="model" aria-labelledby="model-title">
+      <div class="sheet__label" aria-hidden="true">§02 — The CAD model</div>
+      <header class="section-head">
+        <p class="eyebrow">How a transport moves through the system</p>
+        <h2 class="section-title" id="model-title">Book, dispatch, roll, record</h2>
+        <p class="section-intro">Every transport follows one path. The steps that move it forward run as single database transactions, so the board, the crew tablet, and the clinical record can't disagree.</p>
+      </header>
+
+      <figure class="model-figure">
+        <p class="model-figure__hint" aria-hidden="true">Swipe to see the full diagram →</p>
+        <div class="model-figure__scroll">
+          <svg class="diagram model-diagram" viewBox="0 0 960 336" role="img" aria-labelledby="md-title md-desc">
+            <title id="md-title">The GLPS dispatch model</title>
+            <desc id="md-desc">Four stages: book on the schedule board, dispatch in one transaction, the unit on the road, and the record. Below them is the unit status rail: available, en route, arrived, transporting, destination, available. Arrived, transporting and destination each stamp a time on the run sheet; the first press wins.</desc>
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" fill="var(--tech)"/>
+              </marker>
+            </defs>
+
+            <!-- Stages -->
+            <rect class="dg-tech" x="10" y="20" width="200" height="100" rx="2"/>
+            <text class="dg-sub" x="24" y="42">01</text>
+            <text class="dg-label dg-label--tech" x="24" y="66">BOOK</text>
+            <text class="dg-sub" x="24" y="88">SCHEDULE BOARD</text>
+            <text class="dg-sub" x="24" y="104">PICKUP WINDOW · RETURN LEGS</text>
+
+            <rect class="dg-tech" x="257" y="20" width="200" height="100" rx="2"/>
+            <text class="dg-sub" x="271" y="42">02</text>
+            <text class="dg-label dg-label--tech" x="271" y="66">DISPATCH</text>
+            <text class="dg-sub" x="271" y="88">ONE TRANSACTION</text>
+            <text class="dg-sub" x="271" y="104">CALL · UNIT · RUN SHEET</text>
+
+            <rect class="dg-tech" x="504" y="20" width="200" height="100" rx="2"/>
+            <text class="dg-sub" x="518" y="42">03</text>
+            <text class="dg-label dg-label--tech" x="518" y="66">ON THE ROAD</text>
+            <text class="dg-sub" x="518" y="88">UNIT STATUS</text>
+            <text class="dg-sub" x="518" y="104">CREW TABLET · LIVE UPDATES</text>
+
+            <rect class="dg-tech" x="750" y="20" width="200" height="100" rx="2"/>
+            <text class="dg-sub" x="764" y="42">04</text>
+            <text class="dg-label dg-label--tech" x="764" y="66">RECORD</text>
+            <text class="dg-sub" x="764" y="88">RUN SHEET + PCR</text>
+            <text class="dg-sub" x="764" y="104">LOCK · AMEND · AUDIT</text>
+
+            <line class="dg-tech" x1="210" y1="70" x2="255" y2="70" marker-end="url(#arrow)"/>
+            <line class="dg-tech" x1="457" y1="70" x2="502" y2="70" marker-end="url(#arrow)"/>
+            <line class="dg-tech" x1="704" y1="70" x2="748" y2="70" marker-end="url(#arrow)"/>
+
+            <!-- Dispatch sets the unit en route -->
+            <path class="dg-tech" d="M357 120 V156 H224 V182" stroke-dasharray="3 4" marker-end="url(#arrow)"/>
+            <text class="dg-sub" x="290" y="148" text-anchor="middle">SETS UNIT EN ROUTE</text>
+
+            <!-- Status rail -->
+            <line class="dg-rail" x1="40" y1="220" x2="920" y2="220"/>
+            <g class="dg-status">
+              <circle cx="60" cy="220" r="6"/>  <text x="60" y="200" text-anchor="middle">AVAILABLE</text>
+              <circle cx="224" cy="220" r="6"/> <text x="224" y="200" text-anchor="middle">EN ROUTE</text>
+              <circle class="is-stamp" cx="388" cy="220" r="6"/> <text x="388" y="200" text-anchor="middle">ARRIVED</text>
+              <circle class="is-stamp" cx="552" cy="220" r="6"/> <text x="552" y="200" text-anchor="middle">TRANSPORTING</text>
+              <circle class="is-stamp" cx="716" cy="220" r="6"/> <text x="716" y="200" text-anchor="middle">DESTINATION</text>
+              <circle cx="880" cy="220" r="6"/> <text x="880" y="200" text-anchor="middle">AVAILABLE</text>
+            </g>
+            <text class="dg-label--tech dg-stamp" x="388" y="244" text-anchor="middle">↳ ORIGIN ARRIVAL</text>
+            <text class="dg-label--tech dg-stamp" x="552" y="244" text-anchor="middle">↳ ORIGIN DEPART</text>
+            <text class="dg-label--tech dg-stamp" x="716" y="244" text-anchor="middle">↳ DEST. ARRIVAL</text>
+
+            <!-- Stamps feed the record -->
+            <path class="dg-tech" d="M388 258 H800 V122" stroke-dasharray="3 4" marker-end="url(#arrow)"/>
+            <text class="dg-label--tech dg-stamp" x="552" y="276" text-anchor="middle">STAMPS THE RUN SHEET · FIRST PRESS WINS</text>
+
+            <text class="dg-sub" x="40" y="304">VEHICLE STATES (STAMP NOTHING): BUSY · STAND-BY · ON BREAK</text>
+            <text class="dg-sub" x="40" y="324">FIG. 2 — DISPATCH MODEL</text>
+            <text class="dg-sub" x="920" y="324" text-anchor="end">NTS</text>
+          </svg>
+        </div>
+      </figure>
+
+      <article class="stage">
+        <div class="cap__id">
+          <span class="code">01 · Book</span>
+          <h3 class="cap__title">The schedule board</h3>
+        </div>
+        <ul class="scope">
+          <li>A day planner with one lane per unit, in timeline and list views.</li>
+          <li>Pickups are booked as a <strong>window</strong>, not a single deadline.</li>
+          <li>A round trip creates a real <strong>return-leg booking</strong>, with its own crew, run sheet, and number, so the trip home is never forgotten.</li>
+          <li>Held slots can reserve a specific unit, so two dispatchers can't promise the same crew the same hour.</li>
+          <li>Board colors are computed in the database, so the list, timeline, and legend always agree.</li>
+        </ul>
+      </article>
+
+      <article class="stage">
+        <div class="cap__id">
+          <span class="code">02 · Dispatch</span>
+          <h3 class="cap__title">One transaction, no half-states</h3>
+        </div>
+        <ul class="scope">
+          <li>Promoting a booking creates the call, sets the unit en route, links the booking, and opens the run sheet, all in one transaction. A half-finished dispatch can't exist.</li>
+          <li>Reassigning a live call moves the crew in the same step, so the board and the tablet never disagree about who is driving.</li>
+          <li>An <strong>address registry</strong> builds itself from calls. It deduplicates addresses, keeps entry codes and instructions, and raises an alert on the dispatch screen when an active call touches a flagged address.</li>
+        </ul>
+      </article>
+
+      <article class="stage">
+        <div class="cap__id">
+          <span class="code">03 · On the road</span>
+          <h3 class="cap__title">Unit status from the crew tablet</h3>
+        </div>
+        <ul class="scope">
+          <li>Crew set their own unit's status; dispatch can override it. Crew can't change another unit's status.</li>
+          <li>Statuses that mark a moment in the transport (<strong>arrived, transporting, destination</strong>) stamp the run sheet automatically.</li>
+          <li><strong>The first press wins.</strong> A stray tap can't rewrite a time on a clinical record; corrections go through the amendment process.</li>
+          <li>Tablets update live by subscription, so the crew sees a dispatch the moment it happens.</li>
+        </ul>
+      </article>
+
+      <article class="stage">
+        <div class="cap__id">
+          <span class="code">04 · Record</span>
+          <h3 class="cap__title">Run sheet and patient care report</h3>
+        </div>
+        <ul class="scope">
+          <li>The <strong>run sheet</strong> is the dispatch record (mobility, escorts, precautions, disposition, transfer signatures). It opens automatically at dispatch.</li>
+          <li>The <strong>patient care report</strong> is the clinical assessment, modeled on the operator's paper form. It's created only when there is something to assess. No field is captured in both records, so they can't contradict each other.</li>
+          <li>Record numbers encode the record type, the date, and the author's initials.</li>
+          <li>A submitted record is locked. Only its author can amend it, and only with a written reason. Dispatch can void, reopen, or correct a call the same way. Every change lands in a change audit log.</li>
+        </ul>
+      </article>
+    </section>
+
+
+    <!-- §03 SAFEGUARDS ----------------------------------------------- -->
+    <section class="sheet track track--sec" id="safeguards" aria-labelledby="safeguards-title">
+      <div class="sheet__label" aria-hidden="true">§03 — Safeguards</div>
+      <header class="section-head">
+        <p class="eyebrow">Patient health information</p>
+        <h2 class="section-title" id="safeguards-title">Access control that holds at the database</h2>
+        <p class="section-intro">Hiding a tab is presentation, not security. Each control below is enforced where the data lives, and most are checked by automated tests.</p>
+      </header>
+
+      <div class="table-wrap">
+        <table class="matrix matrix--prose">
+          <thead>
+            <tr><th scope="col">Control</th><th scope="col">How it's enforced</th></tr>
+          </thead>
+          <tbody>
+            <tr class="row--sec"><th scope="row">Role-based access</th><td>Five roles: admin, management, dispatch, crew, billing. Each role's screens are configurable in the app, and the same rules are enforced by row-level security in the database. A test suite signs in as each role and checks what it can reach.</td></tr>
+            <tr class="row--sec"><th scope="row">Crew scoping</th><td>Crew see only their own unit's calls and bookings. Signing off shift removes that access immediately.</td></tr>
+            <tr class="row--sec"><th scope="row">Audited patient reads</th><td>Patient records can't be read with a plain query. Every read goes through a server function that writes an audit entry first. The audit log is append-only.</td></tr>
+            <tr class="row--sec"><th scope="row">Locked records</th><td>Submitted run sheets and reports are locked by the database itself. Amendments need the original author and a reason, and every change is recorded.</td></tr>
+            <tr class="row--sec"><th scope="row">Device security</th><td>The live session is held in memory only. What the tablet stores is encrypted with a key derived from the crew member's PIN, so a lost tablet holds nothing usable.</td></tr>
+            <tr class="row--sec"><th scope="row">Data residency</th><td>Self-hosted in Canada. Ontario's health-privacy law (PHIPA) requires a written agreement whenever patient data goes to an outside service provider. Self-hosting removes that provider, and the job becomes securing the server properly.</td></tr>
+            <tr class="row--sec"><th scope="row">No card data</th><td>Payment details never touch the database; a payment processor handles them. The build fails if a card-like column ever appears.</td></tr>
+            <tr class="row--sec"><th scope="row">Operations</th><td>Scheduled backups of both the records and the signature images, checked by a scripted test restore. Failed sign-ins are monitored.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+
+    <!-- §04 DELIVERY ------------------------------------------------- -->
+    <section class="sheet engagement" id="delivery" aria-labelledby="delivery-title">
+      <div class="sheet__label" aria-hidden="true">§04 — Delivery</div>
+      <header class="section-head">
+        <p class="eyebrow">How it was built</p>
+        <h2 class="section-title" id="delivery-title">Seven steps, each one verified</h2>
+      </header>
+
+      <div class="delivery">
+        <ol class="steps">
+          <li class="is-done"><span class="steps__n">1</span><span>Port the prototype into React components, with visual and functional parity</span><span class="steps__s">Done</span></li>
+          <li class="is-done"><span class="steps__n">2</span><span>Design the database schema and migrate the test data</span><span class="steps__s">Done</span></li>
+          <li class="is-done"><span class="steps__n">3</span><span>Wire every screen to the database, one feature at a time</span><span class="steps__s">Done</span></li>
+          <li class="is-done"><span class="steps__n">4</span><span>Authentication</span><span class="steps__s">Done</span></li>
+          <li class="is-done"><span class="steps__n">5</span><span>Roles and row-level security</span><span class="steps__s">Done</span></li>
+          <li><span class="steps__n">6</span><span>New features: pickup windows, vacancy slots, notice board</span><span class="steps__s">In progress</span></li>
+          <li><span class="steps__n">7</span><span>Production hosting</span><span class="steps__s">In progress</span></li>
+        </ol>
+
+        <dl class="terms figures">
+          <div><dt>Database migrations</dt><dd>48, versioned and applied in order</dd></div>
+          <div><dt>Automated test suites</dt><dd>5: schema, access control, API contract, timezone, reset</dd></div>
+          <div><dt>Roles</dt><dd>5, enforced in the database</dd></div>
+          <div><dt>Time handling</dt><dd>Pinned to the operator's timezone. A pickup that falls in a daylight-saving gap moves later, never earlier.</dd></div>
+        </dl>
+      </div>
+
+      <div class="casefile__next">
+        <p>Need dispatch, scheduling, or records software built this way?</p>
+        <a class="btn btn--solid btn--lg" href="index.html#contact">Start an inquiry <span aria-hidden="true">→</span></a>
+        <a class="btn btn--lg" href="index.html#engineering">See all services</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="titleblock">
+    <div class="titleblock__cell titleblock__cell--wide">
+      <span class="titleblock__k">Firm</span>
+      <span class="titleblock__v">Asane Solutions LLC</span>
+    </div>
+    <div class="titleblock__cell">
+      <span class="titleblock__k">Case file</span>
+      <span class="titleblock__v">T-01 · GLPS dispatch</span>
+    </div>
+    <div class="titleblock__cell">
+      <span class="titleblock__k">Doc / Rev</span>
+      <span class="titleblock__v">ASN-GLPS / A</span>
+    </div>
+    <div class="titleblock__cell">
+      <span class="titleblock__k">Issued</span>
+      <span class="titleblock__v">© <span data-year>2026</span></span>
+    </div>
+    <div class="titleblock__cell">
+      <a class="titleblock__top" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
